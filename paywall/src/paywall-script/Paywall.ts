@@ -83,11 +83,23 @@ export class Paywall {
     this.loadCache()
   }
 
-  loadCheckoutModal = () => {
-    if (this.iframe) {
-      this.showIframe()
-    } else {
-      this.shakeHands()
+  // loadCheckoutModal = () => {
+  //   if (this.iframe) {
+  //     this.showIframe()
+  //   } else {
+  //     this.shakeHands()
+  //   }
+  // }
+
+  loadCheckoutModal = (locks: string[] = []) => {
+    if(locks.length < 1) {
+      if (this.iframe) {
+        this.showIframe()
+      } else {
+        this.shakeHands()
+      }
+
+      return;
     }
   }
 
